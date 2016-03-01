@@ -1,0 +1,42 @@
+<h1>New Video</h1>
+<div class="video_pin_form">
+<%= render 'form', video: @video %>
+</div>
+<div id="map"></div>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHC7bztyEvmqLkOJV0W6BDKFPTiWg1Pcg&callback=initMap">
+</script>
+  <script>
+    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var labelIndex = 0;
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: <%= @city.city_lat %>, lng: <%= @city.city_lng %>},
+        zoom: 12
+      });
+        // var infoWindow = new google.maps.InfoWindow({map: map});
+        
+        // This event listener calls addMarker() when the map is clicked.
+        google.maps.event.addListener(map, 'click', function(event) {
+          addMarker(event.latLng, map);
+          lat = event.latLng.lat()
+          lng = event.latLng.lng()
+          $('#pin_lat').val(lat);
+          $('#pin_lng').val(lng);
+        });
+        // Adds a marker to the map.
+        function addMarker(location, map) {
+        // Add the marker at the clicked location, and add the next-available label
+        // from the array of alphabetical characters.
+        var marker = new google.maps.Marker({
+          position: location,
+          label: labels[labelIndex++ % labels.length],
+          map: map
+        });
+
+      }
+
+
+    }
+  </script>
+  <a href="/">home</a>

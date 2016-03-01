@@ -1,0 +1,10 @@
+<h1>Welcome to CityWatch</h1>
+<h2>Please select a city below</h2>
+    <% @cities.each do |city| %>
+      <a href="/cities/<%=city.id%>/videos/new"> <%= city.name %></a>
+      <a href="/cities/<%=city.id%>/officers"><% city.name %> officer login</a>
+    <% end %>
+
+
+
+

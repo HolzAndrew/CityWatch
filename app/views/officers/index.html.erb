@@ -1,0 +1,34 @@
+<div id="map"></div>
+  <!-- <a href="/cities/<%=@city.id%>/videos/new">back to city</a> -->
+    <script>
+
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+
+      function initMap() {
+        var uluru = {lat: <%= @city.city_lat%>, lng: <%= @city.city_lng%>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11,
+          center: uluru
+        });//map
+        <% @videos.each do |video| %>
+
+        var infowindow = new google.maps.InfoWindow({
+        });//infowindow
+       var pin_spot = {lat: <%= video.vid_lat%>, lng: <%= video.vid_lng %>};
+        var marker = new google.maps.Marker({ 
+          position: pin_spot,
+          map: map,
+          title: 'hello from the other side'
+        });
+        
+        marker.addListener('click', function() {
+          infowindow.open(map, this);
+          infowindow.setContent('<iframe width="420" height="150" src="<%= video.url%>" frameborder="0" allowfullscreen></iframe>')
+        });//marker listener
+        <% end %>
+      }//initMap
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHC7bztyEvmqLkOJV0W6BDKFPTiWg1Pcg&callback=initMap">
+    </script>

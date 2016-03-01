@@ -1,0 +1,58 @@
+<%= form_for :video, url: city_videos_path(@city,@videos) do |f| %>
+  <% if video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(video.errors.count, "error") %> prohibited this video from being saved:</h2>
+
+      <ul>
+      <% video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <form action="/cities/(params[:id])/videos/create" method="post" class="video_pin">
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="url" name="url">
+    <label class="mdl-textfield__label" for="url">Youtube embed URL...</label>
+  </div>
+
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="vid_date" name="vid_date">
+    <label class="mdl-textfield__label" for="vid_date">Date...</label>
+  </div>
+
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="vid_time" name="vid_time">
+    <label class="mdl-textfield__label" for="vid_time">Time...</label>
+  </div>
+
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="email" name="email">
+    <label class="mdl-textfield__label" for="email">Email...</label>
+  </div>
+
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="phone" name="phone">
+    <label class="mdl-textfield__label" for="phone">Phone...</label>
+  </div>
+
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text_area" id="notes" name="notes">
+    <label class="mdl-textfield__label" for="notes">Notes...</label>
+  </div>
+
+  <div class="mdl-textfield mdl-js-textfield" style="visibility: hidden">
+    <input class="mdl-textfield__input" type="text" id="pin_lat" name="vid_lat">
+    <label class="mdl-textfield__label" for="vid_lat">lat</label>
+  </div>
+
+  <div class="mdl-textfield mdl-js-textfield" style="visibility: hidden">
+    <input class="mdl-textfield__input" type="text" id="pin_lng" name="vid_lng">
+    <label class="mdl-textfield__label" for="vid_lng">lng</label>
+  </div>
+
+  <input type="submit" value="submit this form">
+</form>
+<% end %>
+
+
