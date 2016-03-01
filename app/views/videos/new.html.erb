@@ -2,6 +2,11 @@
 <div class="video_pin_form">
 <%= render 'form', video: @video %>
 </div>
+<form class="address_search">
+  <input type="text" class="search_input" id="address_search_input">
+
+  <button type="submit" id="address_search" class="pure_button">search</button>
+</form>
 <div id="map"></div>
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHC7bztyEvmqLkOJV0W6BDKFPTiWg1Pcg&callback=initMap">

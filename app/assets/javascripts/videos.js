@@ -4,7 +4,7 @@ $(document).ready(function() {
   function moveMap(search_lat, search_lng) {
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: search_lat, lng: search_lng},
-      zoom: 15,
+      zoom: 18,
     })//map =
   }//move map
 
@@ -16,20 +16,21 @@ $(document).ready(function() {
 
   $(document).on('submit', ".address_search", function(el) {
     el.preventDefault();
-    ajax({
+      $.ajax({
       type: "GET",
       url: "https://maps.googleapis.com/maps/api/geocode/json",
         data: {
 
-            address: $('#search_input').val(),
+            address: $('.search_input').val(),
             key: ''
         },//data
         success: function(data){
           console.log("mic check. one. two")
+          debugger
           results = data.results[0];
           address = results.formatted_address
-          search_lat = loc_results.geometry.location.lat;
-          search_lng = loc_results.geometry.location.lng;
+          search_lat = results.geometry.location.lat;
+          search_lng = results.geometry.location.lng;
           debugger
           moveMap(search_lat, search_lng);
           return search_lng, search_lat;

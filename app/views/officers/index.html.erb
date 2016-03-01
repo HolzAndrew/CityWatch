@@ -14,6 +14,7 @@
         <% @videos.each do |video| %>
 
         var infowindow = new google.maps.InfoWindow({
+            maxWidth: 400
         });//infowindow
        var pin_spot = {lat: <%= video.vid_lat%>, lng: <%= video.vid_lng %>};
         var marker = new google.maps.Marker({ 
@@ -24,7 +25,7 @@
         
         marker.addListener('click', function() {
           infowindow.open(map, this);
-          infowindow.setContent('<iframe width="600" height="300" src="<%= video.url%>" frameborder="0" allowfullscreen></iframe>')
+          infowindow.setContent('<iframe width="600" height="300" src="<%= video.url%>" frameborder="0" allowfullscreen></iframe>'+'<div>Notes from uploader:<%= video.notes %>')
         });//marker listener
         <% end %>
       }//initMap
