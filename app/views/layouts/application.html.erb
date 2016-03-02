@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css">
-  <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
     <title>CityWatch</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
   </head>
 
-  <body>
-  <!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
+  <body class="<%= controller_name %>-<%= action_name %>">
+  
     <%= yield %>
-
   </body>
 </html>

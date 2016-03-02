@@ -1,50 +1,53 @@
-<h1><%= @city.name %></h1>
-<div class="video_pin_form">
-<%= render 'form', video: @video %>
-</div>
-<form class="address_search">
-  <input type="text" class="search_input" id="address_search_input">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">CityWatch</span>
+      <span class="mdl-layout-title"><%= @city.name %></span>
+      <a class="mdl-navigation__link" href="/">Home</a>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
 
-  <button type="submit" id="address_search" class="pure_button">search</button>
-</form>
-<div id="map"></div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+        <label class="mdl-button mdl-js-button mdl-button--icon"
+               for="fixed-header-drawer-exp">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <form class="address_search">
+            <input class="mdl-textfield__input search_input address_search" type="text" name="address_search"
+                 id="fixed-header-drawer-exp" id="address_search_input">
+          </form>
+        </div>
+
+
+      <!-- <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href=""><%= @city.name %> PD</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav> -->
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Upload a video</span>
+      <div class="video_pin_form">
+       <%= render 'form', video: @video %>
+      </div>
+  </div>
+</div>
+<!-- 
+<form class="address_search spacer">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+  <input type="text" class="search_input mdl-textfield__input" id="address_search_input">
+  <label class="mdl-textfield__label" for="address_search_input">Zoom in on an address</label>
+  </div>
+  <button type="submit" id="address_search" class="mdl-button mdl-js-button mdl-button--raised">search</button>
+</form> -->
+<div id="map" class="spacer" data-lat="<%= @city.city_lat %>" data-lng="<%= @city.city_lng %>"></div>
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHC7bztyEvmqLkOJV0W6BDKFPTiWg1Pcg&callback=initMap">
 </script>
-  <script>
-  var mapStyle = [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}];
-
-    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var labelIndex = 0;
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: <%= @city.city_lat %>, lng: <%= @city.city_lng %>},
-        zoom: 12,
-        styles: mapStyle
-      });
-        // var infoWindow = new google.maps.InfoWindow({map: map});
-        
-        // This event listener calls addMarker() when the map is clicked.
-        google.maps.event.addListener(map, 'click', function(event) {
-          addMarker(event.latLng, map);
-          lat = event.latLng.lat()
-          lng = event.latLng.lng()
-          $('#pin_lat').val(lat);
-          $('#pin_lng').val(lng);
-        });
-        // Adds a marker to the map.
-        function addMarker(location, map) {
-        // Add the marker at the clicked location, and add the next-available label
-        // from the array of alphabetical characters.
-        var marker = new google.maps.Marker({
-          position: location,
-          label: labels[labelIndex++ % labels.length],
-          map: map
-        });
-
-      }
-
-
-    }
-  </script>
   <a href="/">home</a>

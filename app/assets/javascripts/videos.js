@@ -11,10 +11,8 @@ $(document).ready(function() {
 
 
   function moveMap(search_lat, search_lng) {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: search_lat, lng: search_lng},
-      zoom: 18,
-    })//map =
+    window.map.setCenter({lat: search_lat, lng: search_lng})//map =
+    window.map.setZoom(18)
   }//move map
 
   var video_notes;
@@ -35,12 +33,12 @@ $(document).ready(function() {
         },//data
         success: function(data){
           console.log("mic check. one. two")
-          debugger
+          // debugger
           results = data.results[0];
           address = results.formatted_address
           search_lat = results.geometry.location.lat;
           search_lng = results.geometry.location.lng;
-          debugger
+          // debugger
           moveMap(search_lat, search_lng);
           return search_lng, search_lat;
         }//success

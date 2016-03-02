@@ -14,7 +14,11 @@
  *= require_self
  */
 
- 
+
+.mdl-layout__container ~ .spacer {
+  margin: 0;
+  padding-top: 56px;
+}
 
 html, body {
         height: 100%;
@@ -23,8 +27,8 @@ html, body {
       }
       #map {
         height: 70%;
-        width:75%;
-        left: 12.5%;
-        top: 5%;
+        width:99%;
+        left: .5%;
+        top: 1.5%;
         bottom: 12.5%;
       }
