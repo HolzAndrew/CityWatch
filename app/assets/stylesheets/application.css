@@ -26,9 +26,18 @@ html, body {
         padding: 0;
       }
       #map {
-        height: 70%;
-        width:99%;
+        height: 80%;
+        width: 99%;
         left: .5%;
-        top: 10%;
+        top: 5%;
         bottom: 12.5%;
       }
+
+.page-content, main {
+  width: 100%;
+  height: 100%;
+}
+
+.mdl-layout__drawer.is-visible {
+  z-index: 100000000000;
+}

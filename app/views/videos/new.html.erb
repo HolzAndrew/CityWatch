@@ -21,14 +21,7 @@
                  id="fixed-header-drawer-exp" id="address_search_input">
           </form>
         </div>
-
-
-      <!-- <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href=""><%= @city.name %> PD</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-      </nav> -->
+    </div>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -37,17 +30,17 @@
        <%= render 'form', video: @video %>
       </div>
   </div>
-</div>
-<!-- 
-<form class="address_search spacer">
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  <input type="text" class="search_input mdl-textfield__input" id="address_search_input">
-  <label class="mdl-textfield__label" for="address_search_input">Zoom in on an address</label>
-  </div>
-  <button type="submit" id="address_search" class="mdl-button mdl-js-button mdl-button--raised">search</button>
-</form> -->
-<div id="map" class="spacer" data-lat="<%= @city.city_lat %>" data-lng="<%= @city.city_lng %>"></div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <div id="map" class="spacer" data-lat="<%= @city.city_lat %>" data-lng="<%= @city.city_lng %>">
+      </div>
+
 <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHC7bztyEvmqLkOJV0W6BDKFPTiWg1Pcg&callback=initMap">
 </script>
-  <a href="/">home</a>
+    </div>
+  </main>
+</div>
+
+
+
