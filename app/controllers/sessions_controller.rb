@@ -20,9 +20,10 @@ class SessionsController < ApplicationController
     !current_officer.nil?
   end
 
-  def logout
+  def destroy
     session.delete(:officer_id)
     @current_officer = nil
+    redirect_to "/"
   end
 
 end

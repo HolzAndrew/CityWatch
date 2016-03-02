@@ -6,6 +6,7 @@
       <span class="mdl-layout-title"><%= @city.name %></span>
       <a class="mdl-navigation__link" href="/">Home</a>
       <!-- Add spacer, to align navigation to the right -->
+      <p><%= link_to "Log Out", '/logout', method: "delete"%></p>
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
 
@@ -16,6 +17,9 @@
 </header>
 </div>
 <div id="map"></div>
+<div>
+
+</div>
   <!-- <a href="/cities/<%=@city.id%>/videos/new">back to city</a> -->
     <script>
 
