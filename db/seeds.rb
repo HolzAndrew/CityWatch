@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 City.create([
-  { city_lng: '39.2833', city_lat: '76.6176', name: "Baltimore"},
+  { city_lng: '39.2833', city_lat: '-76.6176', name: "Baltimore"},
   ])
 
 Officer.create([
