@@ -16,10 +16,30 @@
     <label class="mdl-textfield__label" for="url">Youtube embed URL...</label>
   </div>
 
-  <div class="mdl-textfield mdl-js-textfield">
+  <span class="select-wrap">
+        <select name="vid_date" id="vid_date">
+          <option value="Jan">Jan</option>
+          <option value="Feb">Feb</option>
+        </select>
+    </span>
+
+  <span class="select-wrap">
+        <select name="vid_date" id="vid_date">
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+    </span>
+
+    <span class="select-wrap">
+        <select name="vid_date" id="vid_date">
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+        </select>
+    </span>
+  <!-- <div class="mdl-textfield mdl-js-textfield">
     <input class="mdl-textfield__input" type="text" id="vid_date" name="vid_date">
     <label class="mdl-textfield__label" for="vid_date">Date...</label>
-  </div>
+  </div> -->
 
   <div class="mdl-textfield mdl-js-textfield">
     <input class="mdl-textfield__input" type="text" id="vid_time" name="vid_time">
@@ -51,7 +71,7 @@
     <label class="mdl-textfield__label" for="vid_lng">lng</label>
   </div>
 
-  <input type="submit" value="submit this form">
+  <input type="submit" value="submit this form" id="pin_form_submit">
 </form>
 <% end %>
 

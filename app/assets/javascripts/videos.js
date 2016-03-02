@@ -1,6 +1,15 @@
 $(document).ready(function() {
   var map;
 
+  $('#pin_form_submit').on("click", function(){
+    if (!$('#pin_lat').val()){
+          event.preventDefault();
+          //flash notice to click for pin location or append note to div with $
+    }
+  })
+
+
+
   function moveMap(search_lat, search_lng) {
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: search_lat, lng: search_lng},
