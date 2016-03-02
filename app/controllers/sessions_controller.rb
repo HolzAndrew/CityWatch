@@ -12,4 +12,17 @@ class SessionsController < ApplicationController
       end
   end
 
+  def current_officer
+    @current_officer ||= Officer.find_by(id: session[:officer_id])
+  end
+
+  def logged_in?
+    !current_officer.nil?
+  end
+
+  def logout
+    session.delete(:officer_id)
+    @current_officer = nil
+  end
+
 end
