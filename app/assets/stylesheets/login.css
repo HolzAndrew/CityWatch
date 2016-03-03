@@ -109,14 +109,14 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
   opacity: 0.5;
 }
 
- active 
+/* active */
 
 input:focus ~ .highlight {
   animation: inputHighlighter 0.3s ease;
 }
 
 
- Animations 
+/* Animations */
 
 @keyframes inputHighlighter {
   from { background: #4a89dc; }
