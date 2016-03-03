@@ -62,6 +62,7 @@ $(document).on('ready page:load', function() {
         var marker = new google.maps.Marker({
           position: location,
           label: labels[labelIndex++ % labels.length],
+          draggable: true,
           map: map
         });//var marker
       }//addMarker
