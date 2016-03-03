@@ -55,3 +55,7 @@ html, body {
   background-color: #4a89dc;
   text-decoration: none;
 }
+.mdl-layout-title a {
+  text-decoration: none;
+  color: white;
+}
