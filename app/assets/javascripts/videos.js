@@ -45,4 +45,13 @@ $(document).ready(function() {
     })//ajax
   });//address search
 
+  // function extractVideoID(url){
+  //   var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+  //   var match = url.match(regExp);
+  //   if ( match && match[7].length == 11 ){
+  //       return match[7];
+  //   }else{
+  //       alert("Please try again with a valid youtube link.");
+  //   }
+  // }//extractVideoID
 });//ready

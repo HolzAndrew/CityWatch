@@ -1,4 +1,4 @@
-/** { box-sizing:border-box; }
+* { box-sizing:border-box; }
 
 body {
   font-family: Helvetica;
@@ -17,7 +17,7 @@ h1 { color: #636363; }
 
 h3 { color: #4a89dc; }
 
-form {
+div.login {
   width: 380px;
   margin: 4em auto;
   padding: 3em 2em 2em 2em;
@@ -45,7 +45,7 @@ input {
 }
 
 input:focus { outline: none; }
-*/
+
 
 /* Label */
 /*
@@ -58,19 +58,19 @@ label {
   left: 5px;
   top: 10px;
   transition: all 0.2s ease;
-}
-*/
+}*/
+
 
 /* active */
 /*
 input:focus ~ label, input.used ~ label {
   top: -20px;
   transform: scale(.75); left: -2px;
-  /* font-size: 14px; */
-/*  color: #4a89dc;
+   font-size: 14px; 
+  color: #4a89dc;
 }*/
 /* Underline */
-/*
+
 .bar {
   position: relative;
   display: block;
@@ -91,14 +91,14 @@ input:focus ~ label, input.used ~ label {
 
 .bar:after { right: 50%; }
 
-*/
+
 /* active */
 
-/*input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
-*/
+input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
+
 
 /* Highlight */
-/*
+
 .highlight {
   position: absolute;
   height: 60%; 
@@ -108,26 +108,26 @@ input:focus ~ label, input.used ~ label {
   pointer-events: none;
   opacity: 0.5;
 }
-*/
 
-/* active */
+
+/* active 
 /*
 input:focus ~ .highlight {
   animation: inputHighlighter 0.3s ease;
 }
 */
 
-/* Animations */
-/*
+/* Animations 
+
 @keyframes inputHighlighter {
   from { background: #4a89dc; }
   to  { width: 0; background: transparent; }
 }
-*/
+
 
 /* Button */
-/*
-.button {
+
+/*.button {
   position: relative;
   display: inline-block;
   padding: 12px 24px;
@@ -146,20 +146,20 @@ input:focus ~ .highlight {
   cursor: pointer;
   transition: all 0.15s ease;
 }
-.button:focus { outline: 0; }
+.button:focus { outline: 0; }*/
 
-*/
+
 /* Button modifiers */
-/*
-.buttonBlue {
+
+/*.buttonBlue {
   background: #4a89dc;
   text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
 }
 
 .buttonBlue:hover { background: #357bd8; }
-*/
 
-/* Ripples container */
+
+ Ripples container 
 
 .ripples {
   position: absolute;
@@ -169,11 +169,11 @@ input:focus ~ .highlight {
   height: 100%;
   overflow: hidden;
   background: transparent;
-}
+}*/
 
 
 /* Ripples circle */
-
+/*
 .ripplesCircle {
   position: absolute;
   top: 50%;
@@ -188,11 +188,11 @@ input:focus ~ .highlight {
 
 .ripples.is-active .ripplesCircle {
   animation: ripples .4s ease-in;
-}
+}*/
 
 
 /* Ripples animation */
-
+/*
 @keyframes ripples {
   0% { opacity: 0; }
 
@@ -203,8 +203,8 @@ input:focus ~ .highlight {
     padding-bottom: 200%;
     opacity: 0;
   }
-}
-
+}*/
+/*
 footer { text-align: center; }
 
 footer p {
@@ -231,4 +231,4 @@ footer img {
 
 footer img:hover { opacity: .83; }
 
-footer img:focus , footer a:focus { outline: none; }
+footer img:focus , footer a:focus { outline: none; }*/
