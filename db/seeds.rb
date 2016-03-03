@@ -11,9 +11,11 @@ City.create([
   ])
 
 Officer.create([
-  { first_name: 'Dee', last_name: 'Stacks', email: 't2@gmail.com', password: 't1', phone: '312-312-3120', city_id: 1},
+  { first_name: 'Dee', last_name: 'Stacks', email: 't2@gmail.com', password: 't2', phone: '312-312-3120', city_id: 1},
   ])
 
-Video.create([
-  { }
-  ])  
+Officer.create([
+  { first_name: 'chicago', last_name: 'cahp', email: 'test@test.com', password: 'test', phone: '312-312-3120', city_id: 2},
+  ])
+
+

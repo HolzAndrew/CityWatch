@@ -36,7 +36,7 @@ $(document).on('ready page:load', function() {
       console.log(lat, lng);
       window.map = new google.maps.Map(map_el, {
         center: {lat: lat, lng: lng },
-        zoom: 12,
+        zoom: 13,
         styles: mapStyle
       });
 

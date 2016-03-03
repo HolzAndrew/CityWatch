@@ -3,10 +3,10 @@
     <div class="mdl-layout__header-row">
       <!-- Title -->
       <span class="mdl-layout-title">CityWatch</span>
-      <span class="mdl-layout-title"><%= @city.name %></span>
+      <span class="mdl-layout-title"><%= @city.name %> Officer View</span>
       <a class="mdl-navigation__link" href="/">Home</a>
       <!-- Add spacer, to align navigation to the right -->
-      <p><%= link_to "Log Out", '/logout', method: "delete"%></p>
+      <a class="mdl-navigation__link logout"><%= link_to "Log Out", '/logout', method: "delete"%></a>
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
 

@@ -41,3 +41,12 @@ html, body {
 .mdl-layout__drawer.is-visible {
   z-index: 100000000000;
 }
+
+.logout{
+  color: white;
+}
+
+.homepage_content{
+  left: 10%;
+  width: 80%;
+}
