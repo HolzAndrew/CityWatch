@@ -50,3 +50,8 @@ html, body {
   left: 10%;
   width: 300px;
 }
+
+.login_button{
+  background-color: #4a89dc;
+  text-decoration: none;
+}
