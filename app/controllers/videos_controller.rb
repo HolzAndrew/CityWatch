@@ -1,6 +1,9 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
+  # uncomment below for regex on url
+  # before_action :pull_youtube_id, :only => [:create]
 
+  # protected
   # GET /videos
   # GET /videos.json
   def index
@@ -22,18 +25,28 @@ class VideosController < ApplicationController
   def edit
   end
 
+  def pull_youtube_id
+    url = params[:video][:url]
+    regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/
+      match = regExp.match(url);
+          if ( match && match[7].length == 11 )
+            @video.url = match[7];
+          end
+  end
+
+
   # POST /videos
   # POST /videos.json
   def create
     @video = Video.new(url:params[:url],
- vid_date:params[:vid_date],
- vid_time:params[:vid_time],
- email:params[:email],
- phone:params[:phone],
- notes:params[:notes],
- vid_lat:params[:vid_lat],
- vid_lng:params[:vid_lng],
- city_id:params[:city_id])
+      vid_date:params[:vid_date],
+      vid_time:params[:vid_time],
+      email:params[:email],
+      phone:params[:phone],
+      notes:params[:notes],
+      vid_lat:params[:vid_lat],
+      vid_lng:params[:vid_lng],
+      city_id:params[:city_id])
 
     respond_to do |format|
       if @video.save

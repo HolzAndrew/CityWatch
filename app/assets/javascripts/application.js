@@ -57,11 +57,23 @@ $(document).on('ready page:load', function() {
       // Adds a marker to the map.
       
       function addMarker(location, map) {
+
+        var image = {
+            url: "https://cdn3.iconfinder.com/data/icons/impressionist-icons/64/binoculars.png",
+            // This marker is 20 pixels wide by 32 pixels high.
+            size: new google.maps.Size(64, 64),
+            // The origin for this image is (0, 0).
+            origin: new google.maps.Point(0, 10),
+            // The anchor for this image is the base of the flagpole at (0, 32).
+            anchor: new google.maps.Point(32, 20)
+          };
         // Add the marker at the clicked location, and add the next-available label
         // from the array of alphabetical characters.
         var marker = new google.maps.Marker({
           position: location,
-          label: labels[labelIndex++ % labels.length],
+          // label: labels[labelIndex++ % labels.length],
+          draggable: true,
+          icon: image,
           map: map
         });//var marker
       }//addMarker
