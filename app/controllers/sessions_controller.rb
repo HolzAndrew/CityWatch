@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
       if officer && officer.authenticate(params[:session][:password])
         session[:officer_id] = officer.id
-        flash[:success] = "Welcome to CityWatch, Ociffer "+officer.last_name.capitalize
+        flash[:success] = "Welcome to CityWatch, Officer "+officer.last_name.capitalize
         redirect_to "/cities/#{officer.city_id}/officers"
       else 
         flash[:warning] = "Your email and/or password are incorrect. Please try again"
